@@ -1,0 +1,13 @@
+---
+services:
+  pdf-merger:
+    build:
+      context: ./pdf-merger
+      dockerfile: Dockerfile
+    ports:
+      - "3100:3000"
+    environment:
+      - WATCHPACK_POLLING=true
+      - CHOKIDAR_USEPOLLING=true
+    stdin_open: true
+    tty: true
